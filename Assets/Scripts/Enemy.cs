@@ -12,6 +12,7 @@ public class Enemy : MonoBehaviour
     private AudioSource _audioSource;
     private float _fireRate = 3.0f;
     private float _canFire = -1;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -35,15 +36,20 @@ public class Enemy : MonoBehaviour
         CalculateMovement();
         if(Time.time > _canFire )
         {
-            _fireRate = Random.Range(3f, 7f);
-            _canFire = Time.time + _fireRate;
-            GameObject enemyLaser = Instantiate(_laserPrefab, transform.position, Quaternion.identity);
-            Laser[] lasers = enemyLaser.GetComponentsInChildren<Laser>();
+            FiringLaser();
+        }
+    }
 
-            for (int i=0; i < lasers.Length; i++)
-            {
-                lasers[i].AssignEnemyLaser();
-            }
+    void FiringLaser()
+    {
+        _fireRate = Random.Range(3f, 7f);
+        _canFire = Time.time + _fireRate;
+        GameObject enemyLaser = Instantiate(_laserPrefab, transform.position, Quaternion.identity);
+        Laser[] lasers = enemyLaser.GetComponentsInChildren<Laser>();
+
+        for (int i = 0; i < lasers.Length; i++)
+        {
+            lasers[i].AssignEnemyLaser();
         }
     }
 
@@ -58,6 +64,7 @@ public class Enemy : MonoBehaviour
             transform.position = new Vector3(randomX, 7, 0);
         }
     }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if(other.tag == "Player")

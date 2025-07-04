@@ -296,10 +296,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _enemyPrefab: {fileID: 839239908340950362, guid: 033950360b0b2344e8cdeb07e7089f38, type: 3}
   _enemyContainer: {fileID: 847427802}
-  powerups:
-  - {fileID: 2931478242931766267, guid: 1d6ed8e661a5e8241a27e82f03f084d5, type: 3}
-  - {fileID: 2032589311924509511, guid: e0ce655fbb6af284481ed21c077eb3db, type: 3}
+  _powerups:
   - {fileID: 4755821867968980794, guid: 3920989f229df50478d5744c5e87dae3, type: 3}
+  - {fileID: 2032589311924509511, guid: e0ce655fbb6af284481ed21c077eb3db, type: 3}
+  - {fileID: 2931478242931766267, guid: 1d6ed8e661a5e8241a27e82f03f084d5, type: 3}
 --- !u!1 &397555420
 GameObject:
   m_ObjectHideFlags: 0
@@ -603,7 +603,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 630588710}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 31d1481e8024fb44fac38e3ce5440651, type: 3}
@@ -1932,7 +1932,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4393925687556992070, guid: 5fee9285358f2a6418112667ccc327d5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.55
+      value: 0.49
       objectReference: {fileID: 0}
     - target: {fileID: 4393925687556992070, guid: 5fee9285358f2a6418112667ccc327d5, type: 3}
       propertyPath: m_LocalPosition.y

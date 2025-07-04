@@ -105,6 +105,12 @@ MonoBehaviour:
   _tripleShotPrefab: {fileID: 8432417585969338544, guid: 8bd0c82626455824fb0fefa50200ec70, type: 3}
   _fireRate: 1.36
   _lives: 3
+  _shieldVisualizer: {fileID: 0}
+  _lefttEngine: {fileID: 0}
+  _rightEngine: {fileID: 0}
+  _score: 0
+  _laserSoundClip: {fileID: 0}
+  _audiosource: {fileID: 0}
 --- !u!61 &5846578502324434743
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -137,7 +143,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.021883488, y: 0}
+  m_Offset: {x: -0.0005789995, y: 0.010652304}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -148,7 +154,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3.5443673, y: 4.4197187}
+  m_Size: {x: 3.3739312, y: 4.2705865}
   m_EdgeRadius: 0
 --- !u!50 &6776117391648870179
 Rigidbody2D:

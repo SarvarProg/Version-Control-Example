@@ -41,6 +41,7 @@ public class Player : MonoBehaviour
 
     private float _horizontalInput;
     private float _verticalInput;
+    private Vector2 _movement;
 
     // Start is called before the first frame update
     void Start()
@@ -77,6 +78,7 @@ public class Player : MonoBehaviour
 
         if(Input.GetKeyDown(KeyCode.Space))
         {
+            Debug.Log("Space Key Pressed"); 
             //Instantiate(laserPrefab, transform.position, Quaternion.identity);
             FireLaser();
         }
@@ -86,8 +88,10 @@ public class Player : MonoBehaviour
     {
         _horizontalInput = Input.GetAxis("Horizontal");
         _verticalInput = Input.GetAxis("Vertical");
-        transform.Translate(Vector3.right * _horizontalInput * _speed * Time.deltaTime);
-        transform.Translate(Vector3.up * _verticalInput * _speed * Time.deltaTime);
+        _movement = new Vector2(_horizontalInput, _verticalInput);
+        //transform.Translate(Vector3.right * _horizontalInput * _speed * Time.deltaTime);
+        //transform.Translate(Vector3.up * _verticalInput * _speed * Time.deltaTime);
+        transform.Translate(_movement * _speed * Time.deltaTime);
         //transform.Translate(new Vector3(1, 0, 0));
 
 
@@ -114,7 +118,7 @@ public class Player : MonoBehaviour
 
     void FireLaser()
     {
-            _canFire = Time.deltaTime + _fireRate;
+        _canFire = Time.deltaTime + _fireRate;
 
         if (_isTripleShotActive == true)
         {
@@ -188,6 +192,7 @@ public class Player : MonoBehaviour
     {
         _isShieldsActive = true;
         _shieldVisualizer.SetActive(true);
+        Debug.Log("Shield is activated");
     }
 
     public void AddScore(int points)

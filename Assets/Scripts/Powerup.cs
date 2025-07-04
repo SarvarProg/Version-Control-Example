@@ -10,7 +10,7 @@ public class Powerup : MonoBehaviour
 
     private float _speed = 3.0f;
     [SerializeField]
-    private int powerupID;
+    private int _powerupID;
     [SerializeField]
     private AudioClip _clip;
 
@@ -38,7 +38,7 @@ public class Powerup : MonoBehaviour
             AudioSource.PlayClipAtPoint(_clip, transform.position);
             if (player != null)
             {
-                switch(powerupID)
+                switch(_powerupID)
                 {
                     case 0:
                          player.TrippleShotActive();
