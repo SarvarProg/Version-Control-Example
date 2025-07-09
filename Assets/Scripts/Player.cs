@@ -14,7 +14,7 @@ public class Player : MonoBehaviour
     private GameObject _tripleShotPrefab;
     [SerializeField]
     private float _fireRate = 0.5f;
-    private float _canFire = -1f;
+    private float _nextFireTime = -1f;
     [SerializeField]
     private int _lives = 3;
     private SpawnManager _spawnManager;
@@ -75,15 +75,20 @@ public class Player : MonoBehaviour
     void Update()
     {
         CalculateMovement();
+        HandleFiring();
+    }
 
-        if(Input.GetKeyDown(KeyCode.Space))
+    private void HandleFiring()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
         {
-            Debug.Log("Space Key Pressed"); 
+            Debug.Log("Space Key Pressed");
             //Instantiate(laserPrefab, transform.position, Quaternion.identity);
-            FireLaser();
+             FireLaser();
         }
     }
 
+   
     void CalculateMovement()
     {
         _horizontalInput = Input.GetAxis("Horizontal");
@@ -118,19 +123,22 @@ public class Player : MonoBehaviour
 
     void FireLaser()
     {
-        _canFire = Time.deltaTime + _fireRate;
-
-        if (_isTripleShotActive == true)
+        if (Time.time > _nextFireTime) //current time is not greater than -1;
         {
-            Instantiate(_tripleShotPrefab, transform.position, Quaternion.identity);
-        }
-        else
-        {
-            Instantiate(_laserPrefab, transform.position + new Vector3(0, 1.05f, 0), Quaternion.identity);
-        }
+            _nextFireTime = Time.time + _fireRate; //-1 = 1.5
 
-        _audiosource.Play();
+            if (_isTripleShotActive == true)
+            {
+                Instantiate(_tripleShotPrefab, transform.position, Quaternion.identity);
+            }
+            else
+            {
+                Instantiate(_laserPrefab, transform.position + new Vector3(0, 1.05f, 0), Quaternion.identity);
+            }
 
+            _audiosource.Play();
+
+        }
     }
 
     public void Damage()

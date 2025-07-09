@@ -16,7 +16,7 @@ public class Enemy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        _player = GameObject.Find("Player").GetComponent<Player>();
+        //_player = GameObject.Find("Player").GetComponent<Player>();
         _audioSource = GetComponent<AudioSource>();
         if(_player == null )
         {
@@ -40,6 +40,18 @@ public class Enemy : MonoBehaviour
         }
     }
 
+    void CalculateMovement()
+    {
+
+        transform.Translate(Vector3.down * _speed * Time.deltaTime);
+
+        if (transform.position.y < -5f)
+        {
+            float randomX = Random.Range(-8f, 8f);
+            transform.position = new Vector3(randomX, 7, 0);
+        }
+    }
+
     void FiringLaser()
     {
         _fireRate = Random.Range(3f, 7f);
@@ -50,18 +62,6 @@ public class Enemy : MonoBehaviour
         for (int i = 0; i < lasers.Length; i++)
         {
             lasers[i].AssignEnemyLaser();
-        }
-    }
-
-    void CalculateMovement()
-    {
-
-        transform.Translate(Vector3.down * _speed * Time.deltaTime);
-
-        if (transform.position.y < -5f)
-        {
-            float randomX = Random.Range(-8f, 8f);
-            transform.position = new Vector3(randomX, 7, 0);
         }
     }
 

@@ -603,7 +603,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 630588710}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 31d1481e8024fb44fac38e3ce5440651, type: 3}
@@ -1734,6 +1734,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 725444998404657136, guid: 1999a6350b1036f4e853442196d07db4, type: 3}
+      propertyPath: _fireRate
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 725444998404657136, guid: 1999a6350b1036f4e853442196d07db4, type: 3}
       propertyPath: _lefttEngine
       value: 
       objectReference: {fileID: 863218527}
@@ -1753,17 +1757,21 @@ PrefabInstance:
       propertyPath: _shieldVisualizer
       value: 
       objectReference: {fileID: 397555420}
+    - target: {fileID: 5846578502324434743, guid: 1999a6350b1036f4e853442196d07db4, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6951105539178843097, guid: 1999a6350b1036f4e853442196d07db4, type: 3}
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 9155619480003343949, guid: 1999a6350b1036f4e853442196d07db4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.49
+      value: -0.06
       objectReference: {fileID: 0}
     - target: {fileID: 9155619480003343949, guid: 1999a6350b1036f4e853442196d07db4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.35
+      value: -0.69
       objectReference: {fileID: 0}
     - target: {fileID: 9155619480003343949, guid: 1999a6350b1036f4e853442196d07db4, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1930,13 +1938,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Asteroid
       objectReference: {fileID: 0}
+    - target: {fileID: 3276195320919889405, guid: 5fee9285358f2a6418112667ccc327d5, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4393925687556992070, guid: 5fee9285358f2a6418112667ccc327d5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.49
+      value: 0.47
       objectReference: {fileID: 0}
     - target: {fileID: 4393925687556992070, guid: 5fee9285358f2a6418112667ccc327d5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.5
+      value: 2.85
       objectReference: {fileID: 0}
     - target: {fileID: 4393925687556992070, guid: 5fee9285358f2a6418112667ccc327d5, type: 3}
       propertyPath: m_LocalPosition.z
